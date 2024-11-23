@@ -22,7 +22,7 @@ GROUP BY rating
 HAVING COUNT(*) >= 160;
 ```
 
-Task 2: Spark DataFrame Queries (30 points)
+## Task 2: Spark DataFrame Queries (30 points)
 
 Goal:
 
@@ -79,12 +79,7 @@ ORDER BY rental_duration DESC, rating
 LIMIT 10;
 ```
 
-Submission:
-
-	•	Python scripts for all queries.
-	•	Output of the scripts.
-
-Task 3: Spark RDD Queries (30 points)
+## Task 3: Spark RDD Queries (30 points)
 
 Goal:
 
@@ -107,9 +102,4 @@ List distinct actor names for films 1, 2, and 3, ordered by first name (limit to
 e. Rental Duration Statistics:
 Group by rental duration and rating, compute statistics (min, max, avg, count), and sort by rental duration (descending) and rating.
 
-Submission:
 
-	•	Python scripts for all queries.
-	•	Output of the scripts.
-
-This markdown format is suitable for a project README or homework assignment instructions.
