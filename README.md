@@ -20,34 +20,7 @@ FROM film
 WHERE length >= 60
 GROUP BY rating
 HAVING COUNT(*) >= 160;
-
-Instructions:
-
-	1.	Prepare the Data:
-	•	Remove the header from film.csv.
-	•	Save the file under an HDFS directory called input.
-	2.	Compile and Run the Program:
-	•	Compile the program:
-
-hadoop com.sun.tools.javac.Main SQL2MR.java
-
-
-	•	Create a JAR file:
-
-jar cf sql2mr.jar SQL2MR*.class
-
-
-	•	Run the program:
-
-hadoop jar sql2mr.jar SQL2MR input output
-
-
-
-Submission:
-
-	•	SQL2MR.java
-	•	sql2mr.jar
-	•	Output file: part-r-00000
+```
 
 Task 2: Spark DataFrame Queries (30 points)
 
@@ -64,22 +37,22 @@ film_actor = spark.read.csv('film_actor.csv', header=True, inferSchema=True)
 Queries:
 
 a. Retrieve Titles and Descriptions:
-
+```sql
 SELECT title, description
 FROM film
 WHERE rating = 'PG'
 LIMIT 5;
-
+```
 b. Average Replacement Cost:
-
+```sql
 SELECT rating, AVG(replacement_cost)
 FROM film
 WHERE length >= 60
 GROUP BY rating
 HAVING COUNT(*) >= 160;
-
+```
 c. Common Actors in Films:
-
+```sql
 SELECT actor_id
 FROM film_actor
 WHERE film_id = 1
@@ -87,18 +60,18 @@ INTERSECT
 SELECT actor_id
 FROM film_actor
 WHERE film_id = 23;
-
+```
 d. Distinct Actors in Films 1, 2, 3:
-
+```sql
 SELECT DISTINCT first_name, last_name
 FROM actor
 JOIN film_actor ON actor.actor_id = film_actor.actor_id
 WHERE film_id IN (1, 2, 3)
 ORDER BY first_name
 LIMIT 5;
-
+```
 e. Rental Duration Statistics:
-
+```sql
 SELECT rental_duration, rating, MIN(length), MAX(length), AVG(length), COUNT(length)
 FROM film
 GROUP BY rental_duration, rating
