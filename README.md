@@ -27,12 +27,12 @@ HAVING COUNT(*) >= 160;
 Goal:
 
 Write Spark DataFrame scripts for the following SQL queries. Assume the following initialization:
-
+```python
 import pyspark.sql.functions as fc
-
 film = spark.read.csv('film.csv', header=True, inferSchema=True)
 actor = spark.read.csv('actor.csv', header=True, inferSchema=True)
 film_actor = spark.read.csv('film_actor.csv', header=True, inferSchema=True)
+```
 
 Queries:
 
