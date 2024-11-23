@@ -9,7 +9,7 @@ The tasks include implementing a Hadoop MapReduce program, Spark DataFrame scrip
 
 ---
 
-## Task 1: Hadoop MapReduce Program (40 points)
+## Task 1: Hadoop MapReduce Program
 
 ### Goal:
 Write a Hadoop MapReduce program (`SQL2MR.java`) to find the result for the following SQL query on the `film.csv` data:
@@ -22,7 +22,7 @@ GROUP BY rating
 HAVING COUNT(*) >= 160;
 ```
 
-## Task 2: Spark DataFrame Queries (30 points)
+## Task 2: Spark DataFrame Queries
 
 Goal:
 
@@ -79,7 +79,7 @@ ORDER BY rental_duration DESC, rating
 LIMIT 10;
 ```
 
-## Task 3: Spark RDD Queries (30 points)
+## Task 3: Spark RDD Queries
 
 Goal:
 
